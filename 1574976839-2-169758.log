@@ -1,0 +1,237 @@
+Agent version:	1.7.0
+Start time:	2019-11-28T21:33:29Z
+$ docker "run" "-v" "/var/run/docker.sock:/var/run/docker.sock" "-v" "/bitrise:/bitrise" "-v" "/tmp/bitrise-agent359109451:/.bitrise-config" "--privileged" "--network=host" "--name=bitrise-main-container" "bitriseio/android:pinned" "bitrise" "run" "--config" "/.bitrise-config/bitrise.yml" "--inventory" "/.bitrise-config/bitrise.secrets.yml" "--json-params-base64" "eyJ3b3JrZmxvdyI6InZhbGlkYXRpb25fd29ya2Zsb3dfbm9fc3NoIn0="
+
+  ██████╗ ██╗████████╗██████╗ ██╗███████╗███████╗
+  ██╔══██╗██║╚══██╔══╝██╔══██╗██║██╔════╝██╔════╝
+  ██████╔╝██║   ██║   ██████╔╝██║███████╗█████╗
+  ██╔══██╗██║   ██║   ██╔══██╗██║╚════██║██╔══╝
+  ██████╔╝██║   ██║   ██║  ██║██║███████║███████╗
+  ╚═════╝ ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚══════╝╚══════╝
+
+[32;1m  version: 1.36.0[0m
+
+[36mINFO[0m[21:33:30] [33;1mbitrise runs in Secret Filtering mode[0m 
+[36mINFO[0m[21:33:31] [33;1mbitrise runs in CI mode[0m           
+[36mINFO[0m[21:33:31] Running workflow: [32;1mvalidation_workflow_no_ssh[0m 
+
+[34;1mSwitching to workflow:[0m validation_workflow_no_ssh
+
++------------------------------------------------------------------------------+
+| (0) Git Clone Repository                                                     |
++------------------------------------------------------------------------------+
+| id: git-clone                                                                |
+| version: 3.4.3                                                               |
+| collection: https://github.com/bitrise-io/bitrise-steplib.git                |
+| toolkit: go                                                                  |
+| time: 2019-11-28T21:33:33Z                                                   |
++------------------------------------------------------------------------------+
+|                                                                              |
+[36mINFO[0m[21:33:33] Start installing (golang) with apt-get       
+[36mINFO[0m[21:33:33]  * [32;1m[OK][0m Step dependency (go) installed, available. 
+
+[34;1mGit Clone Configs:[0m
+- CloneIntoDir: /bitrise/src
+- RepositoryURL: [REDACTED]
+[34;1mGit Checkout Configs:[0m
+- Commit: 
+- Tag: 
+- Branch: [REDACTED]
+- CloneDepth: 
+[34;1mGit Pull Request Configs:[0m
+- PullRequestURI: 
+- PullRequestID: 
+- BranchDest: 
+- PullRequestMergeBranch: 
+- ResetRepository: No
+[34;1mBitrise Build Configs:[0m
+- BuildURL: 
+- BuildAPIToken: 
+
+[34;1mGit clone repository[0m
+=> git "init"
+=> git "remote" "add" "origin" "[REDACTED]"
+=> git "fetch"
+=> git "checkout" "[REDACTED]"
+=> git "submodule" "update" "--init" "--recursive"
+[34;1mExporting git logs[0m
+=> GIT_CLONE_COMMIT_HASH
+   value: f7c7d92c63f6c1340c4bee0f9968fa68f1b50a67
+
+=> GIT_CLONE_COMMIT_MESSAGE_SUBJECT
+   value: Delete indek.html
+
+=> GIT_CLONE_COMMIT_MESSAGE_BODY
+   value: 
+
+=> GIT_CLONE_COMMIT_AUTHOR_NAME
+   value: dereza
+
+=> GIT_CLONE_COMMIT_AUTHOR_EMAIL
+   value: dereza@users.noreply.github.com
+
+=> GIT_CLONE_COMMIT_COMMITER_NAME
+   value: GitHub
+
+=> GIT_CLONE_COMMIT_COMMITER_EMAIL
+   value: noreply@github.com
+
+[32;1mSuccess[0m
+|                                                                              |
++---+---------------------------------------------------------------+----------+
+| [32;1m✓[0m | [32;1mGit Clone Repository[0m                                          | 6.79 sec |
++---+---------------------------------------------------------------+----------+
+| Update available: 3.4.3 -> 4.0.17                                            |
++---+---------------------------------------------------------------+----------+
+
+                                          ▼
+
+[36mINFO[0m[21:33:38] Step uses latest version -- Updating StepLib ... 
+[36mINFO[0m[21:33:38] Update StepLib (https://github.com/bitrise-io/bitrise-steplib.git)... 
++------------------------------------------------------------------------------+
+| (1) Running project scanner                                                  |
++------------------------------------------------------------------------------+
+| id: project-scanner                                                          |
+| version: 3.3.1                                                               |
+| collection: https://github.com/bitrise-io/bitrise-steplib.git                |
+| toolkit: go                                                                  |
+| time: 2019-11-28T21:33:44Z                                                   |
++------------------------------------------------------------------------------+
+|                                                                              |
+[34;1mConfig:
+[0m- ScanDirectory: /bitrise/src
+- ResultSubmitURL: [REDACTED]
+- ResultSubmitAPIToken: *****
+- IconCandidatesURL: [REDACTED]
+- DebugLog: true
+[21:33:57] [34;1m[34;1mRunning scanners:[0m[0m
+
+[21:33:57] [34;1mScanner: [34;1mreact-native[0m[0m
+[21:33:57] +------------------------------------------------------------------------------+
+[21:33:57] |                                                                              |
+[21:33:57] [34;1mCollect package.json files[0m
+[21:33:57] 0 package.json file detected
+[21:33:57] Filter relevant package.json files
+[21:33:57] |                                                                              |
+[21:33:57] +------------------------------------------------------------------------------+
+
+[21:33:57] [34;1mScanner: [34;1mflutter[0m[0m
+[21:33:57] +------------------------------------------------------------------------------+
+[21:33:57] |                                                                              |
+[21:33:57] [34;1mSearch for project(s)[0m
+[21:33:57] Paths containing pubspec.yaml(0):
+[21:33:57] 
+[21:33:57] [34;1mFetching pubspec.yaml files[0m
+[21:33:57] |                                                                              |
+[21:33:57] +------------------------------------------------------------------------------+
+
+[21:33:57] [34;1mScanner: [34;1mionic[0m[0m
+[21:33:57] +------------------------------------------------------------------------------+
+[21:33:57] |                                                                              |
+[21:33:57] [34;1mSearching for config.xml file[0m
+[21:33:57] config.xml: 
+[21:33:57] platform not detected
+[21:33:57] |                                                                              |
+[21:33:57] +------------------------------------------------------------------------------+
+
+[21:33:57] [34;1mScanner: [34;1mcordova[0m[0m
+[21:33:57] +------------------------------------------------------------------------------+
+[21:33:57] |                                                                              |
+[21:33:57] [34;1mSearching for config.xml file[0m
+[21:33:57] config.xml: 
+[21:33:57] platform not detected
+[21:33:57] |                                                                              |
+[21:33:57] +------------------------------------------------------------------------------+
+
+[21:33:57] [34;1mScanner: [34;1mios[0m[0m
+[21:33:57] +------------------------------------------------------------------------------+
+[21:33:57] |                                                                              |
+[21:33:57] [34;1mFilter relevant Xcode project files[0m
+[21:33:57] 0 Xcode ios project files found
+[21:33:57] platform not detected
+[21:33:57] |                                                                              |
+[21:33:57] +------------------------------------------------------------------------------+
+
+[21:33:57] [34;1mScanner: [34;1mmacos[0m[0m
+[21:33:57] +------------------------------------------------------------------------------+
+[21:33:57] |                                                                              |
+[21:33:57] [34;1mFilter relevant Xcode project files[0m
+[21:33:57] 0 Xcode macos project files found
+[21:33:57] platform not detected
+[21:33:57] |                                                                              |
+[21:33:57] +------------------------------------------------------------------------------+
+
+[21:33:57] [34;1mScanner: [34;1mandroid[0m[0m
+[21:33:57] +------------------------------------------------------------------------------+
+[21:33:57] |                                                                              |
+[21:33:57] |                                                                              |
+[21:33:57] +------------------------------------------------------------------------------+
+
+[21:33:57] [34;1mScanner: [34;1mxamarin[0m[0m
+[21:33:57] +------------------------------------------------------------------------------+
+[21:33:57] |                                                                              |
+[21:33:57] [34;1mSearching for solution files[0m
+[21:33:57] 0 solution files detected
+[21:33:57] platform not detected
+[21:33:57] |                                                                              |
+[21:33:57] +------------------------------------------------------------------------------+
+
+Detected project types: []
+
+[21:33:57] [34;1mScanner: [34;1mfastlane[0m[0m
+[21:33:57] +------------------------------------------------------------------------------+
+[21:33:57] |                                                                              |
+[21:33:57] [34;1mSearching for Fastfiles[0m
+[21:33:57] 0 Fastfiles detected
+[21:33:57] platform not detected
+[21:33:57] |                                                                              |
+[21:33:57] +------------------------------------------------------------------------------+
+
+Detected automation tools: []
+
+[21:33:57] [34;1mSubmitting results...[0m
+[21:33:58] [32;1mSubmitted.[0m
+[21:33:58] [34;1mValidating app icons.[0m
+[21:33:58] [34;1mSubmitting app icons...[0m
+[33;1mNo valid icons specified.[0m
+
+[21:33:58] $ tree "." "-L" "3"
+.
+├── azure-pipelines.yml
+├── _config.yml
+├── css
+├── googlefirebase.txt
+└── README.md
+
+0 directories, 5 files
+[21:33:58] [31;1mNo known platform detected[0m
+|                                                                              |
++---+---------------------------------------------------------------+----------+
+| [31;1mx[0m | [31;1mRunning project scanner (exit code: 1)[0m                        | 20.12 sec|
++---+---------------------------------------------------------------+----------+
+| Issue tracker: ...://github.com/bitrise-steplib/steps-project-scanner/issues |
+| Source: https://github.com/bitrise-steplib/steps-project-scanner             |
++---+---------------------------------------------------------------+----------+
+
+
++------------------------------------------------------------------------------+
+|                               bitrise summary                                |
++---+---------------------------------------------------------------+----------+
+|   | title                                                         | time (s) |
++---+---------------------------------------------------------------+----------+
+| [32;1m✓[0m | [32;1mGit Clone Repository[0m                                          | 6.79 sec |
++---+---------------------------------------------------------------+----------+
+| Update available: 3.4.3 -> 4.0.17                                            |
++---+---------------------------------------------------------------+----------+
+| [31;1mx[0m | [31;1mRunning project scanner (exit code: 1)[0m                        | 20.12 sec|
++---+---------------------------------------------------------------+----------+
+| Issue tracker: ...://github.com/bitrise-steplib/steps-project-scanner/issues |
+| Source: https://github.com/bitrise-steplib/steps-project-scanner             |
++---+---------------------------------------------------------------+----------+
+| Total runtime: 26.91 sec                                                     |
++------------------------------------------------------------------------------+
+
+[34;1m[0m
+[34;1mSubmitting anonymized usage informations...[0m
+[34;1mFor more information visit:[0m
+[34;1mhttps://github.com/bitrise-io/bitrise-plugins-analytics/blob/master/README.md[0m
