@@ -1,0 +1,1 @@
+bash <(curl -sfL "https://raw.githubusercontent.com/bitrise-io/bitrise-add-new-project/master/_scripts/run.sh") --api-token "5MPb8iiiHUoGsckduZNe3I4xd64o5Qa1lSaPHKDKD2F-LKYdp8ymQohOrASnh8-A01ibLs80gMR98qxoYY48Cw" --personal "true" --public "true"
